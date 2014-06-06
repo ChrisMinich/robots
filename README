@@ -31,7 +31,7 @@ large enough window, you can resize it, then press "r" for redraw.
 About valid input: you can move the human by using the numeric keypad
 (the numbers 1-9). Also, for convenience, you can use some of the vim
 movement keys, as explained at the bottom of the screen. You CANNOT 
-use the arror keys.
+use the arrow keys.
 
 I should mention that the original game was developed by
 Ken Arnold, for BSD Unix (according to Wikipedia). I did not look
