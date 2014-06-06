@@ -1,0 +1,71 @@
+This is the text for my youtube ( http://youtu.be/Bq2zdajnak8 )video:
+
+Hello. My name is Chris Minich; I live in St. Louis, Missouri, and the name of my project
+is ROBOTS.
+
+According to Wikipedia, the original game was developed by 
+Ken Arnold, for BSD Unix, at least 30 years ago. I have played a version on Linux which is
+known as Gnome Robots. It runs in a window, and you can use a mouse.
+
+So, I wanted to see if I could implement it, and my version runs in a terminal window, using 
+just the keyboard. I didn't look at anybody else's source code; I wrote it from scratch.
+
+In the game you are represented by the letter H: for human.  All of the AT symbols are robots, 
+and they all want to kill you.
+
+Every time you move one step, every robot moves 1 step towards you.
+
+But here's the thing:
+You cannot actually move into a robot.
+
+If your move would allow a robot to catch you, then you're stuck.
+
+It's like when you are checkmated in chess. You aren't allowed to put the king on a square
+where he can be captured.
+
+So...
+When this happens, you only have one option:
+you have to teleport to a new, random, location.
+
+On the first level, you don't have any SAFE TELEPORTs because you have to earn them. 
+With a SAFE TELEPORT, you will always land in an empty square.
+
+When you don't have any of those, then, you TELEPORT completely randomly, and you may 
+land on top of a robot, which kills you.
+
+Another aspect of the game are mines:
+
+When robots collide with each other, they form mines. In the original game, they were
+called scrap heaps, but I call the array that stores their locations, mines.
+
+Now, the human cannot actually run into a mine, but the robots can, and they die
+when they run into one.
+
+Also: the robots cannot avoid the mines. They always move towards the human,
+even when there are mines in the way.
+
+Now
+you can actually hide behind mines for protection from the robots.
+When you are sure that you are SAFE, just press the S, or safety, key.
+
+After you press S, you are done moving, but the remaining robots keep coming at you.
+
+If all of these robots all die, you earn 1 safe teleport for each,
+and you PROCEED to the next level, where there are even more robots to chase after you.
+
+However,
+If you were wrong, though, and a robot catches you, then you die and the game is over.
+
+After you make it through 11 levels, you win!
+
+
+
+
+
+
+
+
+
+
+
+

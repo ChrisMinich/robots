@@ -1,0 +1,31 @@
+This is my reimplementation of the old Unix game, Robots.
+In the game, randomly placed robots are trying to catch you. 
+You can move, one step at a time, up, down, left, right, 
+diagonally, or stay where you are. Each time you take your 
+turn, the robots move one step towards you. When robots 
+collide with each other, they form mines. The mines won't 
+harm the human (in fact you can hide behind them), but when 
+a robot runs into a mine, the robot is destroyed. You cannot 
+move, intentionally, to a space adjacent to a robot. This is 
+similar to chess: you cannot place the human in a place where 
+he/she will be killed (in chess, you cannot move into check). 
+When there are no safe moves, the human must teleport to a random 
+location. Once you are sure that the human is in a safe location, 
+you can press the "safe" key which keeps the human stationary, 
+while the robots continue to pursue you. If you have hidden, 
+strategically, behind the right mines, the robots will all destroy 
+themselves, and you will earn a number of "safe teleports" equal 
+to the number of robots still chasing you at that point. Beware, 
+that If you have miscalculated, one of the robots will catch you 
+and you'll lose the game. However, if they all destroy themselves, 
+you'll advance to the next level. Points are earned every time 2 
+or more robots collide. After 11 levels, you win.
+
+Important note: the surest way to start the game with enough room 
+for the layout is to maximize your terminal window. The layout 
+requires 70 columns by 34 lines. If you run the program without a 
+large enough window, you can resize it, then press "r" for redraw.
+
+I should mention that the original game was developed by
+Ken Arnold, for BSD Unix (according to Wikipedia). I did not look
+at his, or anybody else's code, for my version.
