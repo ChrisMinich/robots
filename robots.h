@@ -18,13 +18,13 @@
 #define esc 27
 #define cls printf("%c[2J",esc)
 #define pos(row,col) printf("%c[%d;%dH",esc,row,col)
-#define BLUE 34
+#define BLUE 34 // foreground colors are in the 30s
 #define CYAN 36
 #define GREEN 32
 #define RED 31
 #define YELLOW 33
 #define WHITE 37
-#define BLACK 40
+#define BLACK 40 // background color (since it is 40 and not 30)
 #define FOREGROUND "\x1b[%d;1m"
 #define BACKGROUND "\x1b[%dm"
 #define NORMAL "%c[0m",esc
@@ -49,8 +49,8 @@ int safeTeleports = 0;
 int safeMode = 0;
 int init = 1; // set-up mode
 char hit = 'x'; // Human caught by: x is by a robot. @ is by transport on top of a robot. # is by transport onto a mine.
-int color = 0;
-int bg = BLACK;
+int color = 0; // values are: 0 for off, and 1 for on
+int bg = 40; // all backgrounds are numbers in the 40s
 int tracemode = 0;
 int mega_teleports_achieved = 0;
 int start_amt = 0; // number of robots successfully instantiated for each level

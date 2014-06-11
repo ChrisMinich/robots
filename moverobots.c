@@ -100,6 +100,7 @@ int advanceRobots()
 	int count = 0;
 	int i, j, roboty, robotx;
 	int caught = 0;
+	int captor;
    
 	for(i=0; i<robotcount; i++) // copy all robot positions
 		clone[i] = robot[i];
@@ -115,29 +116,32 @@ int advanceRobots()
 
 		robot[i] = roboty * 100 + robotx;
       
-		if(robot[i] == y * 100 + x) // the robot caught the man
+		if((!caught) && (robot[i] == y * 100 + x)) // the robot caught the man
 		{
 			caught = 1;
 			hit = 'x';
-			if(safeMode == 1) // you can only lose if you are in safeMode (user pressed 's')
-			{
-				youLose(i);
-				return(1);
-			}			
+			captor = i;		
 		}
 
 		for(j=0; j<minecount; j++)  // see if new positions are = to any mines
 			if(mine[j] == robot[i]) robot[i] = 0;
 	}
-	if((caught) && (safeMode == 0)) // player DID NOT press 's', so DON'T kill player
+	if((caught) && (safeMode == 1))
 	{
-		for(i=0; i<robotcount; i++) robot[i] = clone[i];
-		return(0); // don't need to refresh the board
+		youLose(captor);
 	}
-	for(i=0; i<robotcount; i++) // delete any robots that ran into a mine
-		if(robot[i] > 0) robot[count++] = robot[i]; // go to next
-	robotcount = count;
-	if(robotcount<1) 
-		finishLevel();
+	else
+	{
+		if((caught) && (safeMode == 0)) // player DID NOT press 's', so DON'T kill player
+		{
+			for(i=0; i<robotcount; i++) robot[i] = clone[i];
+			return(0); // don't need to refresh the board
+		}
+		for(i=0; i<robotcount; i++) // delete any robots that ran into a mine
+			if(robot[i] > 0) robot[count++] = robot[i]; // go to next
+		robotcount = count;
+		if(robotcount<1) 
+			finishLevel();
+	}
 	return(1); 
 }     
