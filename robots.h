@@ -9,7 +9,7 @@
 #include <stdlib.h> // for rand
 #include <string.h>
 
-#define LIMIT 400
+#define LIMIT 500 // was 400
 //#define LIMIT 200  // test win function
 #define INCREMENT 25 // additional robots per level
 #define START 150
@@ -74,6 +74,9 @@ void message(int n);
 void placeAllMines(void);
 void placeAllRobots();
 void placeMine(int mine);
+int insertIntoArray(int new, int size);
+int getNewCoordinates();
+void makeRobots(int max);
 
 //moverobots.c
 void consolidate(int* arr, int* arr_count);

@@ -56,16 +56,15 @@ int main(int argc, char *argv[])
 			mine[i] = -5;
 		}
       
-		for(i=0; i<maxrobots; i++) // store initial robots into array
-		{
-			robot[i] = (rand() % HEIGHT + 1) * 100;     
-			robot[i] = (rand() % WIDTH + 1) + robot[i];
-		}  
+		makeRobots(maxrobots);  
+		
+/*		exit(0);*/
        
 		newposition = teleport();
 		while(humanUnSafe(newposition) >= 0)
 			newposition = teleport(); // place (H)uman in a random location
 		sortRobots();
+
 		start_amt = robotcount;
 
 		refreshboard();
